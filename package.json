@@ -1,16 +1,9 @@
 {
-    "name": "vercel-api-project",
-    "version": "1.0.0",
-    "description": "A simple API project for Vercel deployment",
-    "main": "api/endpoint.js",
-    "scripts": {
-        "start": "node api/endpoint.js"
-    },
-    "dependencies": {
-        "@vercel/node": "^2.10.0",
-        "typescript": "^5.2.2"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+  "name": "wangmoxun-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "license": "MIT"
 }

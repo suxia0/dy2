@@ -1,9 +1,3 @@
 {
-    "version": 2,
-    "routes": [
-        {
-            "src": "/api/endpoint",
-            "dest": "/api/endpoint.js"
-        }
-    ]
-}    
+  "version": 2
+}

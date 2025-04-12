@@ -1,3 +1,5 @@
+const { send } = require('@vercel/node');
+
 // 定义响应数据
 const responseData = {
     "code": 200,
@@ -22,27 +24,26 @@ const responseData = {
     }
 };
 
-// 适配 Vercel 的处理函数
-export default async function handler(req, res) {
+// 导出默认函数以适配 Vercel
+module.exports = async (req, res) => {
     // 处理 GET 请求
     if (req.method === 'GET') {
-        res.status(200).send('‼️王墨寻‼️妈妈被轮奸女儿被，全家光光🤬');
+        return send(res, 200, '‼️王墨寻‼️妈妈被轮奸女儿被，全家光光🤬');
     } 
     // 处理 POST 请求
     else if (req.method === 'POST') {
         try {
-            const { field1, field2 } = JSON.parse(req.body);
+            const { field1, field2 } = req.body;
             if (field1 === '王墨寻妈妈被+1' && field2 === '倒卖者妈妈被+1') {
-                res.status(200).json(responseData);
+                res.setHeader('Content-Type', 'application/json');
+                return send(res, 200, JSON.stringify(responseData));
             } else {
-                res.status(200).send('‼️王墨寻‼️妈妈被女儿被，全家光光🤬');
+                return send(res, 200, '‼️王墨寻‼️妈妈被女儿被，全家光光🤬');
             }
         } catch (error) {
-            res.status(400).send('Invalid JSON in request body');
+            return send(res, 400, 'Invalid JSON in request body');
         }
-    } 
-    // 处理不支持的请求方法
-    else {
-        res.status(405).send('Method Not Allowed');
     }
-}
+    // 处理不支持的请求方法
+    return send(res, 405, 'Method Not Allowed');
+};

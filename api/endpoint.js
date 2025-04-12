@@ -26,24 +26,31 @@ const responseData = {
 
 // 导出默认函数以适配 Vercel
 module.exports = async (req, res) => {
-    // 处理 GET 请求
-    if (req.method === 'GET') {
-        return send(res, 200, '‼️王墨寻‼️妈妈被轮奸女儿被，全家光光🤬');
-    } 
-    // 处理 POST 请求
-    else if (req.method === 'POST') {
-        try {
-            const { field1, field2 } = req.body;
-            if (field1 === '王墨寻妈妈被+1' && field2 === '倒卖者妈妈被+1') {
-                res.setHeader('Content-Type', 'application/json');
-                return send(res, 200, JSON.stringify(responseData));
-            } else {
-                return send(res, 200, '‼️王墨寻‼️妈妈被女儿被，全家光光🤬');
+    try {
+        // 处理 GET 请求
+        if (req.method === 'GET') {
+            return send(res, 200, '‼️王墨寻‼️妈妈被轮奸女儿被，全家光光🤬');
+        } 
+        // 处理 POST 请求
+        else if (req.method === 'POST') {
+            try {
+                const { field1, field2 } = req.body;
+                console.log('Received POST data:', { field1, field2 });
+                if (field1 === '王墨寻妈妈被+1' && field2 === '倒卖者妈妈被+1') {
+                    res.setHeader('Content-Type', 'application/json');
+                    return send(res, 200, JSON.stringify(responseData));
+                } else {
+                    return send(res, 200, '‼️王墨寻‼️妈妈被女儿被，全家光光🤬');
+                }
+            } catch (error) {
+                console.error('Error parsing POST data:', error);
+                return send(res, 400, 'Invalid JSON in request body');
             }
-        } catch (error) {
-            return send(res, 400, 'Invalid JSON in request body');
         }
+        // 处理不支持的请求方法
+        return send(res, 405, 'Method Not Allowed');
+    } catch (error) {
+        console.error('Unexpected error:', error);
+        return send(res, 500, 'Internal Server Error');
     }
-    // 处理不支持的请求方法
-    return send(res, 405, 'Method Not Allowed');
 };

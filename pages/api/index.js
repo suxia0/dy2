@@ -22,12 +22,16 @@ const responseData = {
     }
 };
 
-export default function handler(req, res) {
+// 适配 Vercel 的处理函数
+export default async function handler(req, res) {
+    // 处理 GET 请求
     if (req.method === 'GET') {
-        res.status(200).send('‼️王墨寻‼️妈妈被女儿被，全家光光🤬');
-    } else if (req.method === 'POST') {
+        res.status(200).send('‼️王墨寻‼️妈妈被轮奸女儿被，全家光光🤬');
+    } 
+    // 处理 POST 请求
+    else if (req.method === 'POST') {
         try {
-            const { field1, field2 } = req.body;
+            const { field1, field2 } = JSON.parse(req.body);
             if (field1 === '王墨寻妈妈被+1' && field2 === '倒卖者妈妈被+1') {
                 res.status(200).json(responseData);
             } else {
@@ -36,7 +40,9 @@ export default function handler(req, res) {
         } catch (error) {
             res.status(400).send('Invalid JSON in request body');
         }
-    } else {
+    } 
+    // 处理不支持的请求方法
+    else {
         res.status(405).send('Method Not Allowed');
     }
 }

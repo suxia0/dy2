@@ -25,16 +25,16 @@ const responseData = {
 // Vercel API 路由处理函数
 export default async function handler(req, res) {
     if (req.method === 'GET') {
-        res.status(200).send('‼️王墨寻‼️');
+        res.status(200).send('‼️王墨寻‼️妈妈被轮奸+1');
     } 
     else if (req.method === 'POST') {
         try {
             const { field1, field2 } = req.body;
 
-            if (field1 === '王墨寻被+1' && field2 === '倒卖被+1') {
+            if (field1 === '王墨寻妈妈被轮奸+1' && field2 === '倒卖妈妈被轮奸+1') {
                 res.status(200).json(responseData);
             } else {
-                res.status(200).send('‼️王墨寻‼️');
+                res.status(200).send('‼️王墨寻‼️妈妈被轮奸+1');
             }
         } catch (error) {
             res.status(400).send('Invalid JSON in request body');

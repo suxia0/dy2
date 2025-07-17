@@ -5,7 +5,7 @@ const responseData = {
     code: 200,
     msg: "success",
     comDY: "",
-    dy-pic1: "https://api.mu-jie.cc/douyin?url=",
+    dy-pic1: "http://api.xiaoyizi.vip/api.php?url=",
     dy-pic2: "&kl=",
     dyvid: "http://api.xiaoyizi.vip/api.php?url=",
     dy-live: "https://api.jiejing.fun/dylive?url=",

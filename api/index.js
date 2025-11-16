@@ -8,7 +8,7 @@ const responseData = {
     dy-pic1: "https://parse.shuyuz.com/api/v2/douyin/info",
     get-dy-pic1: "https://api.yujn.cn/api/dy_jx.php?msg=",
     get-d1: "images",
-    get-dy-pic2: "https://apis.jxcxin.cn/api/douyin?url=",
+    get-dy-pic2: "http://apis.jxcxin.cn/api/douyin?url=",
     get-d2: "url",
     dy-pic2: "&kl=",
     dyvid: "https://www.hhlqilongzhu.cn/api/sp_jx/tuji.php?url=",

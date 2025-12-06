@@ -6,7 +6,7 @@ const responseData = {
     msg: "success",
     comDY: "",
     dy-pic1: "https://parse.shuyuz.com/api/v2/douyin/info",
-    get-dy-pic1: "https://api.yujn.cn/api/dy_jx.php?msg=",
+    get-dy-pic1: "http://api.yujn.cn/api/dy_jx.php?msg=",
     get-d1: "images",
     get-dy-pic2: "https://api.mmp.cc/api/Jiexi?url=",
     get-d2: "image_url",
